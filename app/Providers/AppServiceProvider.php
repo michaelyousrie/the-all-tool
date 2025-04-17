@@ -21,7 +21,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         foreach(File::directories(app_path('Apps')) as $app) {
+            $appName = File::name($app);
+
             $this->loadRoutesFrom($app . "/routes.php");
+            $this->loadViewsFrom($app . "/views", $appName);
         }
     }
 }

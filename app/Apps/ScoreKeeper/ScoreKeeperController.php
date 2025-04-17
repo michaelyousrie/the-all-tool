@@ -3,7 +3,6 @@
 namespace App\Apps\ScoreKeeper;
 
 use App\Apps\AppContract;
-use App\Http\Controllers\Controller;
 
 class ScoreKeeperController extends AppContract
 {
@@ -24,6 +23,6 @@ class ScoreKeeperController extends AppContract
 
     public function index()
     {
-        dd('score keeper');
+        return view('ScoreKeeper::index');
     }
 }
